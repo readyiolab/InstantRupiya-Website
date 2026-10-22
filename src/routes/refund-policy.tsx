@@ -175,11 +175,11 @@ function Page() {
             </p>
             <div className="mt-4 space-y-2 text-xs">
               <a
-                href="mailto:support.instantrupiya@aarshfincon.com"
+                href="mailto:support@instantrupiya.com"
                 className="flex items-center gap-2 font-medium text-secondary hover:text-primary transition-colors break-all"
               >
                 <Mail className="h-3.5 w-3.5 shrink-0 text-primary" />
-                <span>support.instantrupiya@aarshfincon.com</span>
+                <span>support@instantrupiya.com</span>
               </a>
               <a
                 href="tel:+917827486530"
@@ -341,10 +341,10 @@ function Page() {
               <p>
                 To initiate a cooling-off loan cancellation or excess refund claim, email our support desk at{" "}
                 <a
-                  href="mailto:support.instantrupiya@aarshfincon.com"
+                  href="mailto:support@instantrupiya.com"
                   className="font-medium text-primary underline"
                 >
-                  support.instantrupiya@aarshfincon.com
+                  support@instantrupiya.com
                 </a>{" "}
                 with the following details:
               </p>

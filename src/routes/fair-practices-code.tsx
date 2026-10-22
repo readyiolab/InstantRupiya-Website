@@ -189,11 +189,11 @@ function Page() {
                 <span>+91-88266 20992</span>
               </a>
               <a
-                href="mailto:support.instantrupiya@aarshfincon.com"
+                href="mailto:support@instantrupiya.com"
                 className="flex items-center gap-2 font-medium text-secondary hover:text-primary transition-colors break-all"
               >
                 <Mail className="h-3.5 w-3.5 shrink-0 text-primary" />
-                <span>support.instantrupiya@aarshfincon.com</span>
+                <span>support@instantrupiya.com</span>
               </a>
             </div>
           </div>
@@ -344,8 +344,8 @@ function Page() {
                 </p>
                 <p>
                   <strong>General Support:</strong>{" "}
-                  <a href="mailto:support.instantrupiya@aarshfincon.com" className="text-primary underline">
-                    support.instantrupiya@aarshfincon.com
+                  <a href="mailto:support@instantrupiya.com" className="text-primary underline">
+                    support@instantrupiya.com
                   </a>
                 </p>
               </div>

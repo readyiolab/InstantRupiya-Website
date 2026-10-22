@@ -57,8 +57,8 @@ function Page() {
               +91-7827486530
             </a>
             , email at{" "}
-            <a href="mailto:support.instantrupiya@aarshfincon.com" className="font-medium text-primary underline">
-              support.instantrupiya@aarshfincon.com
+            <a href="mailto:support@instantrupiya.com" className="font-medium text-primary underline">
+              support@instantrupiya.com
             </a>
             , or chat directly via{" "}
             <a href="https://wa.me/917827486530" target="_blank" rel="noopener noreferrer" className="font-medium text-primary underline">

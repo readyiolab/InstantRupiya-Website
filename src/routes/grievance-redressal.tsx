@@ -40,7 +40,7 @@ function Page() {
           If you have any query, dispute, or complaint regarding your loan application or account, please write to our support team with your loan ID and registered mobile number:
         </p>
         <div className="mt-3 rounded-lg border bg-accent/40 p-4 text-sm space-y-1">
-          <p><strong>Email:</strong> <a href="mailto:support.instantrupiya@aarshfincon.com" className="text-primary underline">support.instantrupiya@aarshfincon.com</a></p>
+          <p><strong>Email:</strong> <a href="mailto:support@instantrupiya.com" className="text-primary underline">support@instantrupiya.com</a></p>
           <p><strong>Helpline:</strong> <a href="tel:+917827486530" className="text-primary underline">+91-7827486530</a></p>
           <p><strong>Response Turnaround Time:</strong> 24 to 48 working hours</p>
         </div>
@@ -56,7 +56,7 @@ function Page() {
           <p><strong>RBI Registration No.:</strong> B-10.00119</p>
           <p><strong>Direct Email:</strong> <a href="mailto:stpl.collection@aarshfincon.com" className="text-primary underline">stpl.collection@aarshfincon.com</a></p>
           <p><strong>Direct Helpline:</strong> <a href="tel:+918826620992" className="text-primary underline">+91-88266 20992</a></p>
-          <p><strong>General Support:</strong> <a href="mailto:support.instantrupiya@aarshfincon.com" className="text-primary underline">support.instantrupiya@aarshfincon.com</a></p>
+          <p><strong>General Support:</strong> <a href="mailto:support@instantrupiya.com" className="text-primary underline">support@instantrupiya.com</a></p>
         </div>
       </InfoBlock>
 

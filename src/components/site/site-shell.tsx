@@ -459,9 +459,9 @@ export function SiteShell({ children }: { children: ReactNode }) {
               <MessageCircle size={15} className="text-green-500 shrink-0" />
               <span>Chat on WhatsApp</span>
             </a>
-            <a href="mailto:support.instantrupiya@aarshfincon.com" className="flex items-center gap-2.5 opacity-85 hover:opacity-100 hover:text-primary transition-colors break-all">
+            <a href="mailto:support@instantrupiya.com" className="flex items-center gap-2.5 opacity-85 hover:opacity-100 hover:text-primary transition-colors break-all">
               <Mail size={15} className="text-primary shrink-0" />
-              <span>support.instantrupiya@aarshfincon.com</span>
+              <span>support@instantrupiya.com</span>
             </a>
           </div>
           <div className="mt-6 border-t border-white/10 pt-4 text-xs opacity-75">
