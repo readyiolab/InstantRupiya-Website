@@ -1,0 +1,12 @@
+# Tasks
+- [x] Verify and improve mobile menu scroll lock, page selection and keyboard navigation.
+- [x] Add adjustable repayment calculator and calculation tests.
+- [x] Add AI-powered application preparation with safe input, streaming and live verification.
+- [x] Ensure application CTAs on every page and verify all destinations.
+- [x] Add reference-inspired floating navigation, repeating typed text and smoother staggered reveals; verify scroll and reduced motion.
+- [x] Enrich all pages with relevant images, content and interactive sections.
+- [x] Redesign shared navigation and add reduced-motion-aware animation.
+- [x] Verify visual layout and interactive flows on desktop and mobile.
+- [x] Separate all navigation and footer pages with shared navigation.
+- [x] Add a repayment page without collecting payments on this website.
+- [x] Point every application action to the supplied loan portal and verify navigation.

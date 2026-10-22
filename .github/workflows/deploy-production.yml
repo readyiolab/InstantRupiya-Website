@@ -1,0 +1,60 @@
+name: Deploy Website Production
+
+on:
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+
+concurrency:
+  group: website-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: Deploy website to production
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy to EC2
+        env:
+          PROD_HOST: ${{ secrets.PROD_HOST }}
+          PROD_USER: ${{ secrets.PROD_USER }}
+          PROD_SSH_KEY: ${{ secrets.PROD_SSH_KEY }}
+        run: |
+          eval $(ssh-agent -s)
+          echo "$PROD_SSH_KEY" | tr -d '\r' | ssh-add -
+          ssh -o StrictHostKeyChecking=no -o ConnectTimeout=60 "$PROD_USER@$PROD_HOST" bash << 'EOF'
+            set -e
+
+            APP_DIR="/var/www/InstantRupiya/InstantRupiya-Website"
+            if [ ! -d "$APP_DIR" ]; then
+              APP_DIR="/var/www/LendigoMicroCare/LendigoMicro-Website"
+            fi
+
+            echo "======================================"
+            echo "Starting website deployment"
+            echo "======================================"
+
+            cd "$APP_DIR"
+
+            echo "Fetching latest main..."
+            git fetch origin main
+
+            echo "Updating production code..."
+            git reset --hard origin/main
+
+            echo "Deployed commit:"
+            git rev-parse --short HEAD
+
+            echo "Installing dependencies..."
+            npm ci
+
+            echo "Building website..."
+            npm run build
+
+            echo "======================================"
+            echo "Website deployment completed"
+            echo "======================================"
+          EOF
