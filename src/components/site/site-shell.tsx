@@ -6,7 +6,7 @@ import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetClose } from "@/com
 import { APPLICATION_URL } from "@/lib/site-config";
 import { cn } from "@/lib/utils";
 
-const logoUrl = "/instantrupiya-logo.webp";
+const logoUrl = "/logo.png";
 
 const nav = [
   { to: "/personal-loan", label: "Personal Loan" },
