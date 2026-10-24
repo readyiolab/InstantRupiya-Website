@@ -1,5 +1,6 @@
-// Keep application traffic on the verified portal until the new portal is provisioned.
-export const APPLICATION_URL = "https://loan.lendigomicrocare.com/";
+export const APPLICATION_URL =
+  (typeof import.meta !== "undefined" && import.meta.env?.VITE_APPLICATION_URL) ||
+  "https://loan.instantrupiya.com/";
 
 export function pageHead(title: string, description: string) {
   const fullTitle = `${title} — InstantRupiya`;
