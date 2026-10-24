@@ -29,9 +29,6 @@ jobs:
             set -e
 
             APP_DIR="/var/www/InstantRupiya/InstantRupiya-Website"
-            if [ ! -d "$APP_DIR" ]; then
-              APP_DIR="/var/www/LendigoMicroCare/LendigoMicro-Website"
-            fi
 
             echo "======================================"
             echo "Starting InstantRupiya website deployment"
