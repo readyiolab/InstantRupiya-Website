@@ -1,4 +1,4 @@
-name: Deploy Website Production
+name: Deploy InstantRupiya Website Production
 
 on:
   push:
@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: Deploy website to production
+    name: Deploy InstantRupiya website to production
     runs-on: ubuntu-latest
 
     steps:
@@ -34,7 +34,7 @@ jobs:
             fi
 
             echo "======================================"
-            echo "Starting website deployment"
+            echo "Starting InstantRupiya website deployment"
             echo "======================================"
 
             cd "$APP_DIR"
@@ -55,6 +55,6 @@ jobs:
             npm run build
 
             echo "======================================"
-            echo "Website deployment completed"
+            echo "InstantRupiya website deployment completed"
             echo "======================================"
           EOF
