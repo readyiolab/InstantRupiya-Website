@@ -1,4 +1,5 @@
-export const APPLICATION_URL = "https://loan.instantrupiya.com/";
+// Keep application traffic on the verified portal until the new portal is provisioned.
+export const APPLICATION_URL = "https://loan.lendigomicrocare.com/";
 
 export function pageHead(title: string, description: string) {
   const fullTitle = `${title} — InstantRupiya`;
