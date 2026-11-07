@@ -1,6 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { Menu, X, ArrowUpRight, ChevronDown, Wallet, Calculator, CircleHelp, ShieldCheck, Phone, Mail, MessageCircle } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown, Wallet, Calculator, CircleHelp, ShieldCheck, Phone, Mail, MessageCircle, Building2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetClose } from "@/components/ui/sheet";
 import { APPLICATION_URL } from "@/lib/site-config";
