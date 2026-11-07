@@ -1,6 +1,6 @@
 import { Link, useLocation } from "@tanstack/react-router";
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { Menu, X, ArrowUpRight, ChevronDown, Wallet, Calculator, CircleHelp, ShieldCheck, Phone, Mail, MessageCircle, Building2 } from "lucide-react";
+import { Menu, X, ArrowUpRight, ChevronDown, Wallet, Calculator, CircleHelp, ShieldCheck, Phone, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetTrigger, SheetContent, SheetTitle, SheetClose } from "@/components/ui/sheet";
 import { APPLICATION_URL } from "@/lib/site-config";
@@ -13,8 +13,6 @@ const nav = [
   { to: "/how-it-works", label: "How it works" },
   { to: "/emi-calculator", label: "EMI Calculator" },
   { to: "/repayment", label: "Repayment" },
-  { to: "/application-preparation", label: "Application Preparation" },
-  { to: "/blog", label: "Blog" },
   { to: "/contact", label: "Contact" },
 ] as const;
 
@@ -201,7 +199,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
                         { to: "/personal-loan", label: "Personal Loan", desc: "Instant credit up to ₹5,00,000", icon: Wallet },
                         { to: "/emi-calculator", label: "EMI Calculator", desc: "Plan monthly budget & tenure", icon: Calculator },
                         { to: "/repayment", label: "Repay Loan", desc: "Direct repayment portal", icon: ShieldCheck },
-                        { to: "/application-preparation", label: "Application Prep", desc: "Check docs & readiness checklist", icon: Building2 },
                       ].map(item => (
                         <Link
                           key={item.to}
@@ -233,7 +230,6 @@ export function SiteShell({ children }: { children: ReactNode }) {
                         { to: "/about", label: "About Us" },
                         { to: "/how-it-works", label: "How It Works" },
                         { to: "/faqs", label: "FAQs" },
-                        { to: "/blog", label: "Financial Blog" },
                         { to: "/contact", label: "Contact Us" },
                       ].map(n => (
                         <Link
@@ -370,7 +366,7 @@ export function SiteShell({ children }: { children: ReactNode }) {
         <progress aria-label="Page reading progress" value={progress} max={100} className="reading-progress absolute bottom-0 h-0.5 w-full" />
       </header>
     </div>
-    <main>{children}<section aria-label="Application next steps" className="bg-brand px-6 py-12 text-center text-primary-foreground"><h2 className="mb-6 text-3xl font-bold">Take the next step with InstantRupiya</h2><div className="flex flex-wrap justify-center gap-4"><ApplyButton light /><Button asChild variant="outline" className="h-12 rounded-full px-6 text-secondary"><Link to="/application-preparation">Prepare my application<ArrowUpRight /></Link></Button></div></section></main>
+    <main>{children}<section aria-label="Application next steps" className="bg-brand px-6 py-12 text-center text-primary-foreground"><h2 className="mb-6 text-3xl font-bold">Take the next step with InstantRupiya</h2><div className="flex flex-wrap justify-center gap-4"><ApplyButton light /><Button asChild variant="outline" className="h-12 rounded-full px-6 text-secondary"><Link to="/emi-calculator">Plan your EMI<ArrowUpRight /></Link></Button></div></section></main>
     <footer className="bg-secondary text-secondary-foreground">
       {/* Top Pre-Footer Callout Bar */}
       <div className="border-b border-white/10 bg-secondary/95 py-5">

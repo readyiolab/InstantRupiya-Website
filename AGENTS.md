@@ -16,5 +16,5 @@
 - Motion uses CSS transitions and intersection-triggered reveals with a prefers-reduced-motion override, keeping content readable without animation.
 - Shared navigation uses a scroll-state class with requestAnimationFrame updates; typed supporting text owns its timer and reduced-motion listener so both clean up on navigation.
 - Mobile navigation uses the shared Radix Sheet in a full-viewport portal for focus trapping, scroll locking and left-slide entry/exit; it closes on navigation or desktop resize.
-- Shared application next steps render inside SiteShell for every content page; preparation has a dedicated route and uses a same-origin streaming AI endpoint with validated opt-in inputs, no borrower persistence, and service-only persistent access-block state.
+- Shared application next steps render inside SiteShell for every content page with Apply CTAs using APPLICATION_URL.
 - Repayment estimates use the shared pure reducing-balance calculation, supporting zero interest and unrounded totals; displayed estimates exclude lender fees and rounding.

@@ -11,9 +11,6 @@ import repayment from "@/assets/repayment.webp";
 import aboutUs from "@/assets/about-us.webp";
 import contactUs from "@/assets/contact-us.webp";
 import legalCompliance from "@/assets/legal-compliance.webp";
-import applicationPrep from "@/assets/application-prep.webp";
-import careers from "@/assets/careers.webp";
-import blogJournal from "@/assets/blog-journal.webp";
 
 export function pageImage(title: string) {
   if (/Personal Loan/i.test(title)) return { src: personalLoan, alt: "A cheerful Indian woman professional in a contemporary cafe celebrating instant loan approval" };
@@ -22,9 +19,6 @@ export function pageImage(title: string) {
   if (/Repayment/i.test(title)) return { src: repayment, alt: "A relieved Indian man verifying digital repayment confirmation on his smartphone" };
   if (/About/i.test(title)) return { src: aboutUs, alt: "Dynamic Indian fintech team collaborating in a modern corporate office" };
   if (/Contact/i.test(title)) return { src: contactUs, alt: "Friendly Indian customer support specialist assisting borrowers" };
-  if (/Careers/i.test(title)) return { src: careers, alt: "Passionate Indian tech engineers and product managers collaborating in a tech hub" };
-  if (/Application Preparation|Preparation/i.test(title)) return { src: applicationPrep, alt: "Organized financial documents and digital KYC checklist on a study desk" };
-  if (/Blog|Journal/i.test(title)) return { src: blogJournal, alt: "Woman reading personal finance and loan advice in a peaceful balcony setting" };
   if (/Privacy|Terms|Refund|Interest|Fair|Governance|KYC|Risk|Disclaimer|Grievance/i.test(title)) {
     return { src: legalCompliance, alt: "Secure digital finance infrastructure and regulatory compliance shield" };
   }
@@ -70,11 +64,7 @@ function Questions({ title }: { title: string }) {
 }
 
 function TopicExplorer({ title }: { title: string }) {
-  const topics = /Careers/.test(title) ? [
-    ["Customer experience", "Put people first", "Thoughtful communication and careful follow-up matter in financial services. Look for verified opportunities that match your strengths in helping people understand their options."],
-    ["Technology", "Build for clarity", "Digital experiences should be accessible, reliable and easy to understand. These are areas to explore if you enjoy problem solving and building useful products."],
-    ["Operations", "Make the details count", "Accurate records, careful processes and consistent coordination help teams deliver dependable experiences. No vacancies are currently confirmed on this website."],
-  ] : /Contact|Grievance/.test(title) ? [
+  const topics = /Contact|Grievance/.test(title) ? [
     ["Application", "Help with your application", "Check your application status on the loan portal. For a document or decision query, use the support channel shown there and keep your application reference ready."],
     ["Repayment", "Help with a payment", "Keep the payment reference, date and amount ready. Ask your lender to confirm the payment status through their verified support channel before retrying."],
     ["Complaint", "Raise a clear concern", "Describe what happened, when it happened and the outcome you are requesting. Save your complaint reference and follow the lender’s published escalation process."],
@@ -86,10 +76,6 @@ function TopicExplorer({ title }: { title: string }) {
     ["Clarity", "A more informed starting point", "A personal loan is a financial commitment. Our website brings together application access, repayment guidance and planning information so you can consider your next step with more context."],
     ["Planning", "Your budget comes first", "Borrowing should fit your everyday life. Consider existing commitments and keep room for essentials before deciding on an amount and tenure."],
     ["Awareness", "Confidence through information", "Read your lender’s disclosures, verify communication channels and keep your records safe. Good questions are an important part of any borrowing decision."],
-  ] : /Journal/.test(title) ? [
-    ["Credit", "Start with your credit picture", "Review your credit report, check for errors and understand your existing obligations. Consistent on-time repayments are more useful than promises of an instant score increase."],
-    ["Budgeting", "Give every expense a place", "List essentials, regular commitments and planned purchases. Build a buffer before taking on another monthly payment, and revisit your budget when circumstances change."],
-    ["Borrowing", "Compare the whole offer", "Look at total repayment and fees alongside the EMI. A longer tenure can reduce the monthly payment while increasing the overall interest paid."],
   ] : [
     ["Loan amount", "Start with what you actually need", "Include the expense you are planning for without borrowing more than necessary. Compare the resulting monthly estimate against the room in your budget."],
     ["Tenure", "Balance monthly comfort and total cost", "A longer tenure generally lowers the monthly payment but can increase total interest. Compare both the monthly payment and total repayment before deciding."],
@@ -98,7 +84,7 @@ function TopicExplorer({ title }: { title: string }) {
   const [selected,setSelected] = useState(0);
   const current = topics[selected] ?? topics[0];
   if (!current) return null;
-  return <div className="grid gap-10 lg:grid-cols-2"><img src={pageImage(title).src} alt={pageImage(title).alt} width={1536} height={864} loading="lazy" className="h-80 w-full rounded-lg object-cover"/><div><p className="section-kicker">TAKE A CLOSER LOOK</p><h2 className="mt-3 text-3xl font-bold text-secondary">{ /Contact|Grievance/.test(title) ? "What can we help with?" : /Journal/.test(title) ? "Explore the essentials." : /Careers/.test(title) ? "Where could you make a difference?" : "The details that matter."}</h2><div role="tablist" aria-label="Information topics" className="mt-5 flex flex-wrap gap-2">{topics.map(([label],i)=><Button key={label} role="tab" aria-selected={selected===i} variant={selected===i ? "secondary" : "outline"} onClick={()=>setSelected(i)}>{label}</Button>)}</div><div role="tabpanel" className="mt-6 min-h-40"><h3 className="text-xl font-bold">{current[1]}</h3><p className="mt-3 leading-relaxed text-muted-foreground">{current[2]}</p></div></div></div>;
+  return <div className="grid gap-10 lg:grid-cols-2"><img src={pageImage(title).src} alt={pageImage(title).alt} width={1536} height={864} loading="lazy" className="h-80 w-full rounded-lg object-cover"/><div><p className="section-kicker">TAKE A CLOSER LOOK</p><h2 className="mt-3 text-3xl font-bold text-secondary">{ /Contact|Grievance/.test(title) ? "What can we help with?" : "The details that matter."}</h2><div role="tablist" aria-label="Information topics" className="mt-5 flex flex-wrap gap-2">{topics.map(([label],i)=><Button key={label} role="tab" aria-selected={selected===i} variant={selected===i ? "secondary" : "outline"} onClick={()=>setSelected(i)}>{label}</Button>)}</div><div role="tabpanel" className="mt-6 min-h-40"><h3 className="text-xl font-bold">{current[1]}</h3><p className="mt-3 leading-relaxed text-muted-foreground">{current[2]}</p></div></div></div>;
 }
 
 export function PageExperience({ title }: { title: string }) {

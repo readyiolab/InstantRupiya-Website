@@ -33,3 +33,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Local browser profile debris
+.edge_profile/
+

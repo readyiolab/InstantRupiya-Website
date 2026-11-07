@@ -11,9 +11,6 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
-import { Route as ApplicationPreparationRouteImport } from './routes/application-preparation'
-import { Route as BlogRouteImport } from './routes/blog'
-import { Route as CareersRouteImport } from './routes/careers'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CorporateGovernancePolicyRouteImport } from './routes/corporate-governance-policy'
 import { Route as DisclaimerRouteImport } from './routes/disclaimer'
@@ -30,7 +27,6 @@ import { Route as RefundPolicyRouteImport } from './routes/refund-policy'
 import { Route as RepaymentRouteImport } from './routes/repayment'
 import { Route as RiskManagementPolicyRouteImport } from './routes/risk-management-policy'
 import { Route as TermsAndConditionsRouteImport } from './routes/terms-and-conditions'
-import { Route as ApiPreparationRouteImport } from './routes/api/preparation'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -40,21 +36,6 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ApplicationPreparationRoute = ApplicationPreparationRouteImport.update({
-  id: '/application-preparation',
-  path: '/application-preparation',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BlogRoute = BlogRouteImport.update({
-  id: '/blog',
-  path: '/blog',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const CareersRoute = CareersRouteImport.update({
-  id: '/careers',
-  path: '/careers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ContactRoute = ContactRouteImport.update({
@@ -138,18 +119,10 @@ const TermsAndConditionsRoute = TermsAndConditionsRouteImport.update({
   path: '/terms-and-conditions',
   getParentRoute: () => rootRouteImport,
 } as any)
-const ApiPreparationRoute = ApiPreparationRouteImport.update({
-  id: '/api/preparation',
-  path: '/api/preparation',
-  getParentRoute: () => rootRouteImport,
-} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/application-preparation': typeof ApplicationPreparationRoute
-  '/blog': typeof BlogRoute
-  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/corporate-governance-policy': typeof CorporateGovernancePolicyRoute
   '/disclaimer': typeof DisclaimerRoute
@@ -166,14 +139,10 @@ export interface FileRoutesByFullPath {
   '/repayment': typeof RepaymentRoute
   '/risk-management-policy': typeof RiskManagementPolicyRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
-  '/api/preparation': typeof ApiPreparationRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/application-preparation': typeof ApplicationPreparationRoute
-  '/blog': typeof BlogRoute
-  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/corporate-governance-policy': typeof CorporateGovernancePolicyRoute
   '/disclaimer': typeof DisclaimerRoute
@@ -190,15 +159,11 @@ export interface FileRoutesByTo {
   '/repayment': typeof RepaymentRoute
   '/risk-management-policy': typeof RiskManagementPolicyRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
-  '/api/preparation': typeof ApiPreparationRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/application-preparation': typeof ApplicationPreparationRoute
-  '/blog': typeof BlogRoute
-  '/careers': typeof CareersRoute
   '/contact': typeof ContactRoute
   '/corporate-governance-policy': typeof CorporateGovernancePolicyRoute
   '/disclaimer': typeof DisclaimerRoute
@@ -215,16 +180,12 @@ export interface FileRoutesById {
   '/repayment': typeof RepaymentRoute
   '/risk-management-policy': typeof RiskManagementPolicyRoute
   '/terms-and-conditions': typeof TermsAndConditionsRoute
-  '/api/preparation': typeof ApiPreparationRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
-    | '/application-preparation'
-    | '/blog'
-    | '/careers'
     | '/contact'
     | '/corporate-governance-policy'
     | '/disclaimer'
@@ -241,14 +202,10 @@ export interface FileRouteTypes {
     | '/repayment'
     | '/risk-management-policy'
     | '/terms-and-conditions'
-    | '/api/preparation'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
-    | '/application-preparation'
-    | '/blog'
-    | '/careers'
     | '/contact'
     | '/corporate-governance-policy'
     | '/disclaimer'
@@ -265,14 +222,10 @@ export interface FileRouteTypes {
     | '/repayment'
     | '/risk-management-policy'
     | '/terms-and-conditions'
-    | '/api/preparation'
   id:
     | '__root__'
     | '/'
     | '/about'
-    | '/application-preparation'
-    | '/blog'
-    | '/careers'
     | '/contact'
     | '/corporate-governance-policy'
     | '/disclaimer'
@@ -289,15 +242,11 @@ export interface FileRouteTypes {
     | '/repayment'
     | '/risk-management-policy'
     | '/terms-and-conditions'
-    | '/api/preparation'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ApplicationPreparationRoute: typeof ApplicationPreparationRoute
-  BlogRoute: typeof BlogRoute
-  CareersRoute: typeof CareersRoute
   ContactRoute: typeof ContactRoute
   CorporateGovernancePolicyRoute: typeof CorporateGovernancePolicyRoute
   DisclaimerRoute: typeof DisclaimerRoute
@@ -314,7 +263,6 @@ export interface RootRouteChildren {
   RepaymentRoute: typeof RepaymentRoute
   RiskManagementPolicyRoute: typeof RiskManagementPolicyRoute
   TermsAndConditionsRoute: typeof TermsAndConditionsRoute
-  ApiPreparationRoute: typeof ApiPreparationRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -331,27 +279,6 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/application-preparation': {
-      id: '/application-preparation'
-      path: '/application-preparation'
-      fullPath: '/application-preparation'
-      preLoaderRoute: typeof ApplicationPreparationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/blog': {
-      id: '/blog'
-      path: '/blog'
-      fullPath: '/blog'
-      preLoaderRoute: typeof BlogRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/careers': {
-      id: '/careers'
-      path: '/careers'
-      fullPath: '/careers'
-      preLoaderRoute: typeof CareersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/contact': {
@@ -466,22 +393,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TermsAndConditionsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/api/preparation': {
-      id: '/api/preparation'
-      path: '/api/preparation'
-      fullPath: '/api/preparation'
-      preLoaderRoute: typeof ApiPreparationRouteImport
-      parentRoute: typeof rootRouteImport
-    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ApplicationPreparationRoute: ApplicationPreparationRoute,
-  BlogRoute: BlogRoute,
-  CareersRoute: CareersRoute,
   ContactRoute: ContactRoute,
   CorporateGovernancePolicyRoute: CorporateGovernancePolicyRoute,
   DisclaimerRoute: DisclaimerRoute,
@@ -498,7 +415,6 @@ const rootRouteChildren: RootRouteChildren = {
   RepaymentRoute: RepaymentRoute,
   RiskManagementPolicyRoute: RiskManagementPolicyRoute,
   TermsAndConditionsRoute: TermsAndConditionsRoute,
-  ApiPreparationRoute: ApiPreparationRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

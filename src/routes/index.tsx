@@ -5,7 +5,7 @@ import { EmiCalc } from "@/components/site/emi-calculator";
 import hero from "@/assets/hero-home.webp";
 import emiCalculator from "@/assets/emi-calculator.webp";
 import howItWorks from "@/assets/how-it-works.webp";
-import blogJournal from "@/assets/blog-journal.webp";
+import personalLoan from "@/assets/personal-loan.webp";
 import { PageExperience } from "@/components/site/page-experience";
 import { TypedText } from "@/components/site/typed-text";
 
@@ -37,10 +37,10 @@ const steps = [
   { t: "Submit Documents", d: "Upload your KYC and income documents to get verified." },
   { t: "Get Instant Funds", d: "Voila! Receive funds in your bank within 30 minutes." },
 ];
-const blogs = [
-  "Ways to get an instant personal loan without a CIBIL score",
-  "How to plan a wedding budget with a personal loan",
-  "5 tips to improve your credit score quickly",
+const guides = [
+  { title: "Plan your EMI before you apply", to: "/emi-calculator" as const, img: emiCalculator },
+  { title: "See how InstantRupiya works", to: "/how-it-works" as const, img: howItWorks },
+  { title: "Explore personal loan options", to: "/personal-loan" as const, img: personalLoan },
 ];
 
 function Index() {
@@ -115,14 +115,14 @@ function Index() {
         <p className="mt-5 text-muted-foreground">InstantRupiya is a credit-enabled fintech platform offering instant personal loans to salaried professionals in a safe and easy way. Loans from ₹10,000 to ₹2.50 lakh can be used for weddings, festivals, medical bills, travel and more.</p>
       </section>
 
-      <section id="blog" className="bg-soft py-20">
+      <section id="guides" className="bg-soft py-20">
         <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-center text-4xl font-bold text-secondary">Latest from our blog</h2>
+          <h2 className="text-center text-4xl font-bold text-secondary">Helpful next steps</h2>
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            {blogs.map((b) => (
-              <article key={b} className="overflow-hidden rounded-3xl bg-card shadow-card">
-                <img src={b===blogs[0] ? blogJournal : b===blogs[1] ? emiCalculator : howItWorks} alt="Personal finance and everyday planning" width={1536} height={864} loading="lazy" className="h-48 w-full object-cover"/>
-                <div className="p-6"><h3 className="font-bold text-secondary">{b}</h3><Link to="/blog" className="mt-3 inline-block text-sm font-semibold text-primary">Read more →</Link></div>
+            {guides.map((g) => (
+              <article key={g.title} className="overflow-hidden rounded-3xl bg-card shadow-card">
+                <img src={g.img} alt="" width={1536} height={864} loading="lazy" className="h-48 w-full object-cover"/>
+                <div className="p-6"><h3 className="font-bold text-secondary">{g.title}</h3><Link to={g.to} className="mt-3 inline-block text-sm font-semibold text-primary">Learn more →</Link></div>
               </article>
             ))}
           </div>
