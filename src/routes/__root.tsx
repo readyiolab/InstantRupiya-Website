@@ -12,6 +12,8 @@ import { useEffect, type ReactNode } from "react";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteShell } from "@/components/site/site-shell";
+import { StructuredData } from "@/components/site/structured-data";
+import { SITE_URL } from "@/lib/site-config";
 
 function NotFoundComponent() {
   return (
@@ -79,13 +81,16 @@ export const Route = createRootRoute({
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "InstantRupiya — Instant Personal Loans" },
-      { name: "description", content: "Instant personal loans from ₹10,000 to ₹2,50,000." },
+      { name: "description", content: "InstantRupiya is a digital lending platform operated under Aarsh Fincon Limited, an RBI-registered NBFC. Explore personal loan information, repayment guidance and planning tools." },
       { name: "author", content: "InstantRupiya" },
+      { name: "robots", content: "index, follow" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "InstantRupiya" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
+      { rel: "manifest", href: "/manifest.json" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Outfit:wght@500;700;800&family=Poppins:wght@400;500;600&display=swap" },
       { rel: "icon", type: "image/png", href: "/favicon.png" },
@@ -115,6 +120,35 @@ function RootShell({ children }: { children: ReactNode }) {
 function RootComponent() {
   return (
     /* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */
-    <SiteShell><Outlet /></SiteShell>
+    <>
+      <StructuredData
+        data={{
+          "@context": "https://schema.org",
+          "@graph": [
+            {
+              "@type": "Organization",
+              "@id": `${SITE_URL}/#organization`,
+              name: "InstantRupiya",
+              legalName: "Aarsh Fincon Limited",
+              url: SITE_URL,
+              logo: `${SITE_URL}/logo.webp`,
+              email: "support@instantrupiya.com",
+              telephone: "+91-7827486530",
+              description:
+                "InstantRupiya is a digital lending platform operated under Aarsh Fincon Limited, an RBI-registered Non-Banking Financial Company (Registration No. B-10.00119).",
+            },
+            {
+              "@type": "WebSite",
+              "@id": `${SITE_URL}/#website`,
+              url: SITE_URL,
+              name: "InstantRupiya",
+              publisher: { "@id": `${SITE_URL}/#organization` },
+              inLanguage: "en-IN",
+            },
+          ],
+        }}
+      />
+      <SiteShell><Outlet /></SiteShell>
+    </>
   );
 }

@@ -1,0 +1,8 @@
+/* TEAM */
+Website: InstantRupiya
+Operating entity: Aarsh Fincon Limited
+Support: support@instantrupiya.com
+
+/* SITE */
+Language: English
+Standards: HTML5, CSS3

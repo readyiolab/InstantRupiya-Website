@@ -1,0 +1,28 @@
+# InstantRupiya
+
+> InstantRupiya is a digital lending platform operated under Aarsh Fincon Limited, an RBI-registered Non-Banking Financial Company (Registration No. B-10.00119). The website provides personal loan information, application access, repayment guidance, and financial planning tools.
+
+## Main pages
+- https://instantrupiya.com/
+- https://instantrupiya.com/about
+- https://instantrupiya.com/contact
+- https://instantrupiya.com/how-it-works
+- https://instantrupiya.com/personal-loan
+- https://instantrupiya.com/emi-calculator
+- https://instantrupiya.com/repayment
+- https://instantrupiya.com/faqs
+
+## Policies and disclosures
+- https://instantrupiya.com/terms-and-conditions
+- https://instantrupiya.com/privacy-policy
+- https://instantrupiya.com/disclaimer
+- https://instantrupiya.com/fair-practices-code
+- https://instantrupiya.com/interest-rate-policy
+- https://instantrupiya.com/kyc-aml-policy
+- https://instantrupiya.com/corporate-governance-policy
+- https://instantrupiya.com/risk-management-policy
+- https://instantrupiya.com/refund-policy
+- https://instantrupiya.com/grievance-redressal
+
+## Important
+Loan approval, interest rates, fees, repayment terms, and disbursal decisions are determined by the applicable regulated lender. Review the final loan agreement and disclosures before accepting an offer.

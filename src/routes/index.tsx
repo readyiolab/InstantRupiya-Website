@@ -8,18 +8,14 @@ import howItWorks from "@/assets/how-it-works.webp";
 import personalLoan from "@/assets/personal-loan.webp";
 import { PageExperience } from "@/components/site/page-experience";
 import { TypedText } from "@/components/site/typed-text";
+import { pageHead } from "@/lib/site-config";
 
 export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "InstantRupiya — Instant Personal Loans up to ₹2.5 Lakh" },
-      { name: "description", content: "Get instant personal loans from ₹10,000 to ₹2,50,000 online with minimal documents. Money in your account within 30 minutes." },
-      { property: "og:title", content: "InstantRupiya — Instant Personal Loans" },
-      { property: "og:description", content: "Personal loans from ₹10,000 to ₹2,50,000, 100% online, funds in 30 minutes." },
-      { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-    ],
-  }),
+  head: () => pageHead(
+    "Instant Personal Loans up to ₹2.5 Lakh",
+    "Explore personal loans from ₹10,000 to ₹2,50,000 through InstantRupiya. Review eligibility, understand repayment and make an informed borrowing decision.",
+    "/",
+  ),
   component: Index,
 });
 

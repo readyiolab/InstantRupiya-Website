@@ -29,3 +29,9 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+## Search and AI discovery
+
+The site renders route-specific titles, descriptions, canonical URLs, social metadata, and structured data in the server-rendered HTML. Crawler resources are maintained in `public/robots.txt`, `public/sitemap.xml`, `public/llms.txt`, `public/manifest.json`, and `public/humans.txt`.
+
+Set `VITE_SITE_URL` to the canonical site origin when deploying to a different domain. When changing the production domain, also update the URLs in the static robots, sitemap, and `llms.txt` files.

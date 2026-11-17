@@ -1,0 +1,16 @@
+{
+  "name": "InstantRupiya",
+  "short_name": "InstantRupiya",
+  "description": "Personal loan information, repayment guidance and planning tools from InstantRupiya.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#20b49f",
+  "icons": [
+    {
+      "src": "/favicon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}
